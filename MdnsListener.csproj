@@ -1,0 +1,35 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <AssemblyTitle>MdnsListener</AssemblyTitle>
+    <Product>MdnsListener</Product>
+    <Company>Anand Shankar Dyavanapalli</Company>
+    <Copyright>Copyright (C) 2025 Anand Shankar Dyavanapalli</Copyright>
+    <Description>A high-performance multicast DNS (mDNS) listener for service discovery</Description>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CommandLineParser" Version="2.9.1" />
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="9.0.6" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="MdnsListener.Tests\**" />
+    <EmbeddedResource Remove="MdnsListener.Tests\**" />
+    <None Remove="MdnsListener.Tests\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="appsettings.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="appsettings.*.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>
